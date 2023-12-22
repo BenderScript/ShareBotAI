@@ -14,14 +14,14 @@ from langchain.chains import ConversationalRetrievalChain
 
 
 class TextDocProcessor:
-    def __init__(self, llm=None, embeddings=None, env_file="./.azure.env", temp_dir="./.tempdir"):
+    def __init__(self, llm=None, embeddings=None, env_file="./.env", temp_dir="./.tempdir"):
 
         """
         Initialize the TextDocProcessor class. This class packs everything needed to
         process documents, from loading from disk,  through creating embeddings and
         finally conversations.
 
-        :param llm: If None, default is AzureChatOpenAI instance
+        :param llm: If None, default is ChatOpenAI instance
         :param embeddings: If None, default is OpenAIEmbeddings instance
         :param env_file: path to the environment file, default is "./.azure.env"
         :param temp_dir: path to the temporary directory, default is "./.tempdir"
