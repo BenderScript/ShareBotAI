@@ -1,4 +1,4 @@
-**Title**: GenAI Sharepoint Demo Report
+# GenAI Sharepoint RAG Chatbot
 
 **Objective**: The primary goal of this demo was to showcase a RAG Chatbot utilizing data from a Sharepoint folder.
 
@@ -10,7 +10,24 @@
 5. **Data Storage**: All processed information is stored in a VectorDB.
 6. **Chatbot Creation**: Utilizing this data, a chatbot is created based on GPT-4 that can answer questions derived from the information in these files.
 
-**Areas for Improvement**:
+# How to Run
+
+Create a `.env` file with the following information:
+
+```bash
+OPENAI_API_KEY=<your open ai key>
+OPENAI_API_TEMPERATURE=0.6
+OPENAI_API_MODEL_NAME=gpt-4
+OFFICE365_CLIENT_ID=<client id>
+OFFICE365_CLIENT_SECRET=<client secret>
+SHAREPOINT_SITE_URL=https://example.sharepoint.com/sites/myside
+SHAREPOINT_FOLDER=Shared Documents/Engineering/genai
+```
+
+Running `bootstrap.py` will open a browser tab with the streamlit interface. 
+
+# Areas for Improvement
+
 While the demo was successful, there are opportunities for enhancement. One significant aspect is the preparation of documents before processing. Encouraging users to provide more detailed information about the documents or leveraging GPT-4 to summarize the text could greatly enhance the chatbot's ability to provide insightful responses.
 
 # How to connect to SharePoint Online and SharePoint 2013 2016 2019 on premises with app principal

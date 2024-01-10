@@ -1,10 +1,34 @@
 import os
 import tempfile
+import glob
+import shutil
 
 import streamlit as st
 from dotenv import load_dotenv
 from streamlit_extras.switch_page_button import switch_page
 from text_docs_processor import TextDocProcessor
+
+
+def remove_temp_folders(temp_folder_path="."):
+    """
+    Removes temporary folders with a specific naming pattern from the given path.
+
+    :param temp_folder_path: The path where the temporary folders are located.
+    """
+    # Use glob to find all folders that match the naming pattern
+    temp_folders = glob.glob(os.path.join(temp_folder_path, 'tmp*'))
+
+    # Loop through the folders and remove them
+    for folder in temp_folders:
+        try:
+            # Use shutil.rmtree to remove folders that might contain files
+            shutil.rmtree(folder)
+            print(f"Removed folder: {folder}")
+        except OSError as e:
+            print(f"Error removing folder {folder}: {e}")
+
+
+remove_temp_folders()
 
 st.set_page_config(page_title="Sharepoint GenAI RAG Chatbot", page_icon=":rocket:", layout="wide")
 st.title("GenAI - Sharepoint URL Dynamic Chatbot")
@@ -19,7 +43,6 @@ with col1:
 
     sharepoint_folder = st.text_input('Sharepoint folder', os.getenv("SHAREPOINT_FOLDER"))
     st.write('The Sharepoint folder is', sharepoint_folder)
-
 
 # Initialization
 if 'sharepoint_url' not in st.session_state:
