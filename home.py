@@ -28,12 +28,15 @@ def remove_temp_folders(temp_folder_path="."):
             print(f"Error removing folder {folder}: {e}")
 
 
-remove_temp_folders()
-
 st.set_page_config(page_title="Sharepoint GenAI RAG Chatbot", page_icon=":rocket:", layout="wide")
 st.title("GenAI - Sharepoint URL Dynamic Chatbot")
 
 load_dotenv(override=True, dotenv_path=".env")  # take environment variables from .env.
+
+# Streamlit integration
+if 'has_run' not in st.session_state:
+    remove_temp_folders()  # Adjust path if necessary
+    st.session_state['has_run'] = True
 
 col1, col2 = st.columns(2)
 
