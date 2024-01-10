@@ -9,3 +9,4 @@ Office365_REST_Python_Client==2.5.4
 docx2txt==0.8
 chromadb==0.4.22
 tiktoken==0.5.2
+langchain_openai==0.0.2
