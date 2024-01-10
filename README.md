@@ -48,7 +48,7 @@ While the demo was successful, there are opportunities for enhancement. One sign
 
 https://github.com/vgrem/Office365-REST-Python-Client/wiki/How-to-connect-to-SharePoint-Online-and-and-SharePoint-2013-2016-2019-on-premises--with-app-principal
 
-# Using Streamlit with Self-Signed SSL Certificate
+# Using Streamlit with Self-Signed SSL Certificate (Optional)
 
 https://docs.streamlit.io/library/advanced-features/https-support
 
