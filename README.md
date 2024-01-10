@@ -12,6 +12,8 @@
 
 # How to Run
 
+## .env file
+
 Create a `.env` file with the following information:
 
 ```bash
@@ -24,7 +26,19 @@ SHAREPOINT_SITE_URL=https://example.sharepoint.com/sites/myside
 SHAREPOINT_FOLDER=Shared Documents/Engineering/genai
 ```
 
+## Installing Dependencies
+
+```bash
+pip3 install -r requirements.txt
+```
+
+## Running
+
 Running `bootstrap.py` will open a browser tab with the streamlit interface. 
+
+```bash
+python3 bootstrap.py
+```
 
 # Areas for Improvement
 
