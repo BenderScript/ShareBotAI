@@ -1,8 +1,8 @@
 from enum import Enum
-from langchain.document_loaders import UnstructuredPowerPointLoader
-from langchain.document_loaders import Docx2txtLoader
-from langchain.document_loaders import UnstructuredPDFLoader
-from langchain.document_loaders import CSVLoader
+from langchain_community.document_loaders import UnstructuredPowerPointLoader
+from langchain_community.document_loaders import Docx2txtLoader
+from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import CSVLoader
 
 
 class FileType(Enum):
